@@ -11,14 +11,18 @@ public class DemoChar {
     char c9 = '好';
     char c10 = 1; // char -> int (int 升級)
     System.out.println(c9);
-    String s = "10";
+    String s = "10人";
 
     String isPassed = "P"; // or "F"
     char isPassed2 = 'P'; // or 'F'
     boolean isPassed3 = true; //the best approach to describe pass or fail
+    System.out.println(s);
+    System.out.println(isPassed2);
+    System.out.println(isPassed);
 
-
-
+    boolean man;
+    man=false;
+    System.out.println(man);
 
   }
   

@@ -11,6 +11,7 @@ public class DemoInt {
     System.out.println("monthlysalary:" +monthlysalary);// "String" 字庫申 +variable --> monthlysalary:20000
 
     int i=2;
+    i= 2+i;
     System.out.println("i:" +i);
     //"int age" -> Declaration, int-."integer"
     // age=30 ->Assignment, assign the integer value 30 to the variable
