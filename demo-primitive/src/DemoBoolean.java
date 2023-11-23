@@ -1,9 +1,11 @@
 public class DemoBoolean {
   public static void main(String[] args) {
     boolean isHoliday = true;
-    isHoliday = false; 
-    
+    isHoliday = false;
+
     System.out.println(isHoliday);
-  }
   
+  
+  
+  }
 }

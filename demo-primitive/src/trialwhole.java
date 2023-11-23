@@ -30,6 +30,18 @@ public class trialwhole {
     Successful= false;
     System.out.println("Success:" +Successful);
 
+String level = "Are you ok ?";
+String level1 = "you are right !";
+String level2 = "No worries";
+
+// fd = 10 -> emotionalindex + 1
+int emotionalindex = 0;
+int fd = 0;
+
+if (emotionalindex = 0) {
+  System.out.println(level);
+}
+
+
   }
-  
 }
