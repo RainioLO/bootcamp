@@ -275,6 +275,30 @@ public class DemoOperator {
 
 // Q1, Q2 @50 if 100 -> Excellent, 50 -> Average, 0-> Poor
 
+    // >, <, >=, <=, !
+    boolean isPassed = false;
+    if (isPassed) { // ==false
+      System.out.println("isPassed is false");
+    }
+    isPassed = true; //reassignment
+    if (isPassed) { //==true
+      System.out.println("isPassed is true");
+    }
+
+    String str = "www.apple.com";
+    if (str.length()<10 || "www.apple.com".equals(str)) {
+    System.out.println("length < 10 or www.apple.com");
+    }
+
+    String s = ""; // empty String, length = 0
+    System.out.println(s.length());
+    s += "hello";
+    if (!s.isEmpty()) { // if is not empty
+      System.out.println("s is NOT empty");
+    }
+
+    
+
 
     }
     }
