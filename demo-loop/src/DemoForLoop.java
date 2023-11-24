@@ -143,12 +143,35 @@ public class DemoForLoop {
             }
             sum += i;
 
-            if (sum >= 200) {
+            if (sum > 200) {
+                sum -= i;
                 break;
             }
-
         }
+        i -= 1;
         System.out.println("i=" + i + ", sum=" + sum);
+
+
+        String str = "abc pol ijk def xyz";
+        char target = 'f';
+        int n = 0;
+        boolean found = false;
+        for (i = 0; i < str.length(); i++) { // charAt(i)
+            if (str.charAt(i) == target) { //length and charAt 是一對
+            
+                n = i + 1;
+                found = true;
+            }
+        }
+        if (found) {
+            System.out
+                    .println("Found " + target + " at the " + n + "th character");
+        } else {
+            System.out.println("Not found");
+        }
+
+        // String searchMe = "peter piper picked a peck of pickled"; //count 'P'
+        // for (int i =0, i< searchMe.length())
 
 
 
