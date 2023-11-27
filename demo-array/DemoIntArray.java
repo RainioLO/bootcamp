@@ -37,25 +37,55 @@ public class DemoIntArray {
 
     System.out.println(arr2.length);
 
-    arr2 = new int[10]; //己是全新的array, 原本沒有了 // arr2 是一個路標
+    arr2 = new int[10]; // 己是全新的array, 原本沒有了 // arr2 是一個路標
     System.out.println(arr2.length);
 
     // array supports for loop
 
-// 8 primitivs + String
-// char []
-// boolean []
-// String []
+    // 8 primitivs + String
+    // char []
+    // boolean []
+    // String []
 
-String [] arrString = new String [] {"Hello", "World", "year", "Now", "then"};
+    String[] arrString = new String[] {"Hello", "World", "year", "Now", "then"};
 
-System.out.println(arrString [0]);
-System.out.println(arrString [4]);
+    System.out.println(arrString[0]);
+    System.out.println(arrString[4]);
 
 
-boolean [] Q1Result = new boolean [] {true, false, false, true, false};
+    boolean[] Q1Result = new boolean[] {true, false, false, true, false};
 
-System.out.println (Q1Result [2]);
+    System.out.println(Q1Result[2]);
+
+
+    // default valur of int []
+    int[] arr5 = new int[3];
+    for (int i = 0; i < arr5.length; i++) {
+      // arr5 is storing the address of the array object
+      // we use arr5[5] to find out 3 values stored in the array object
+      arr5[i] = i + 1;
+      System.out.println("arr5[i]= " + arr5[i]);
+      // [0] ->1
+      // [1] ->2
+      // [2] ->3
+    }
+
+    for (int i = arr5.length - 1; i >= 0; i--){
+    System.out.print(arr5[i]);
+    if (i > 0) {
+      System.out.print(" o ");
+    }
+    }
+
+
+
+
+
+
+    String str = "hello"; // str is storing the address of String object hello
+    String str2 = new String("hello"); // str2 is storing the address of String object hello
+    String str3 = String.valueOf("hello");
+
 
 
   }

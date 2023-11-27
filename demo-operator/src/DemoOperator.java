@@ -228,6 +228,7 @@ public class DemoOperator {
     } System.out.println("min=" +min);
 
 
+    
 
     int number = 13;
     //%

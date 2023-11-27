@@ -51,7 +51,7 @@ public class DemoStr {
 
     //if (s1>13) { //cant compare "hello" with 13
 
-    // charAt() (是一個工具)
+    // charAt() (是一個工具) //for searching
     // 4 is an index of String.
     // Example: "hello", h -> index=0
     // e -> index=1
