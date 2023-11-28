@@ -1,3 +1,4 @@
+package src;
 public class DemoIntArray {
   public static void main(String[] args) {
     int age1 = 20;
