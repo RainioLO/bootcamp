@@ -34,10 +34,15 @@ public class DemoConversion {
 
         // char vs int int --> char
         int i3 = 'a'; // 97 char -> int upcast
-        int i4 = 65610;
+        int i4 = 65610; // 65510 - 65535
         char c3 = (char) i4; // downcast
         System.out.println("c3 (int)=" + (int) c3); // 74
         System.out.println("c3 (char)=" + c3); // J, char overflow will not go to negative
+
+        long longvalue = 123456789L;
+
+        // Implicit widening conversion from long to float
+        float floatvalue = (float) longvalue; //loss
 
 
 
