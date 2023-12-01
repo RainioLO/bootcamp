@@ -30,7 +30,7 @@ public class DemoConversion {
 
         float f2 = 3.5f;
         long l3 = (long) f2; // downcast
-        float f3 = 10L; // upcast float --> long
+        float f3 = 10L; // upcast long -> float
 
         // char vs int int --> char
         int i3 = 'a'; // 97 char -> int upcast

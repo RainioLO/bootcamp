@@ -1,6 +1,6 @@
 package src;
 
-public class DemoIntArray2 {
+public class OKDemoIntArray2 {
   public static void main(String[] args) {
 
     int[] arr = new int[] {10, 16, 8, 11, 4, 3}; // only the same type for array

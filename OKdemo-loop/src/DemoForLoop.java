@@ -164,8 +164,7 @@ public class DemoForLoop {
             }
         }
         if (found) {
-            System.out
-                    .println("Found " + target + " at the " + n + "th character");
+            System.out.println("Found " + target + " at the " + n + "th character");
         } else {
             System.out.println("Not found");
         }

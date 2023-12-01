@@ -6,7 +6,7 @@ public class DemoMethod2 {
 
     // Method 1
     String str = append("abc", "def");
-    System.out.println("Method 1: " + str);
+    System.out.println("Method 1: " + append("abc", "def"));
 
     // Method 2
     String str2 = "fgjnfhbdffcdf";
@@ -20,6 +20,82 @@ public class DemoMethod2 {
     String str4 = "abcbcdabc";
     System.out.println("Method 4: " + remove(str4, "bcd"));
 
+    sound2("Dog");
+    sound("Dog");
+    // System.out.println(sound2("ABCdd"));
+
+
+    System.out.println(notifyCustomer3());
+
+
+  }
+
+
+  public static void sound(String animal) { // method type is somehow related to the parameters
+
+    // Early return
+    if ("ABC".equals(animal)) {
+      return; // leave the programme earlier
+    }
+
+    if ("Dog".equals(animal)) {
+      System.out.println("wo wo");
+      return;
+    } else if ("Cat".equals(animal)) {
+      System.out.println("meow");
+      return;
+    }
+    System.out.println("Default sound ...");
+
+  }
+
+  public static String sound2(String animal) {
+
+    if ("ABC".equals(animal)) {
+      return ""; // leave the programme earlier
+    }
+
+    if ("Dog".equals(animal)) {
+      // System.out.println("wo wo");
+      return "wo wo";
+    } else if ("Cat".equals(animal)) {
+      // System.out.println("meow");
+      return "meow";
+    }
+    // System.out.println("Default sound ...");
+    return "Default sound...";
+
+  }
+
+  public static void notifyCustomer() {
+    if (sendEmail()) {
+      return;
+    }
+    sendSMS();
+  }
+
+
+  public static boolean notifyCustomer2() {
+
+    if (sendEmail()) {
+      return true;
+    } else if (sendSMS())
+      return false;
+  }
+
+  public static boolean notifyCustomer3() {
+
+    return sendEmail() || sendSMS(); // return (return false || return false)
+  }
+
+
+
+  public static boolean sendEmail() {
+    return false;
+  }
+
+  public static boolean sendSMS() {
+    return false;
   }
 
 
@@ -30,7 +106,7 @@ public class DemoMethod2 {
   public static String append(String s1, String s2) {
 
     String str = s1.concat(s2);
-    return str;
+    return str; // return should be same type as method type
 
   }
 
@@ -43,7 +119,7 @@ public class DemoMethod2 {
       return ' ';
     } else {
       char lastChar = s.charAt(s.length() - 1);
-      return lastChar;
+      return lastChar; // return a char
     }
 
 
@@ -55,13 +131,15 @@ public class DemoMethod2 {
   // return true"
   public static boolean isStartedWith(String s, String prefix) {
 
-    if (s.startsWith(prefix)) {
+    // if (s.startsWith(prefix)) {
 
-      return true;
-    } else {
-      return false;
-    }
+    // return true;
+    // } else {
+    // return false;
+    // }
 
+    boolean result = s.indexOf(prefix) == 0;
+    return result;
 
   }
 

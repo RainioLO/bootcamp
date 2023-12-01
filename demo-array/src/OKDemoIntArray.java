@@ -1,5 +1,5 @@
 package src;
-public class DemoIntArray {
+public class OKDemoIntArray {
   public static void main(String[] args) {
     int age1 = 20;
     int age2 = 25;
@@ -77,8 +77,6 @@ public class DemoIntArray {
       System.out.print(" o ");
     }
     }
-
-
 
 
 

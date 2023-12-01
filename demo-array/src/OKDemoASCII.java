@@ -1,6 +1,6 @@
 package src;
 
-public class DemoASCII {
+public class OKDemoASCII {
   public static void main(String[] args) {
     char value = 'C';
     int ascii = value;

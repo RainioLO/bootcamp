@@ -57,9 +57,18 @@ public class DemoWrapper {
         Long l2 = (long) (int) i10; // Integer -> Int -> long -> Long (l2)
 
 
+        Double d11 = 1.8d;
+        Double d12 = 1.9d;
+        if (d2 > d1) { // object compare to object, not good 
+            // object must call method
+        }
+        if (d11.compareTo(d12) == 0) { // double == double  use the tool
+
+        }
 
 
 
 
+        
     }
 }
