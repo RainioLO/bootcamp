@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class JavaQuest3 {
+public class OKJavaQuest3 {
   /**
    * Expected Output:
    * 

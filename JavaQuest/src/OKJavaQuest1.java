@@ -16,7 +16,7 @@
  * The variable result is 3
  */
 // Primitive types and operators
-public class JavaQuest1 {
+public class OKJavaQuest1 {
 
   public static void main(String[] args) {
 

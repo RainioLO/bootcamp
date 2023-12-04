@@ -28,7 +28,7 @@ public class DemoStringArray {
 
       // System.out.println("Example:" + strings2[i]);
     }
-    System.out.println(Arrays.toString(strings));
+    System.out.println("Example: " + Arrays.toString(strings));
 
 
     for (int i = 0; i < strings2.length; i++) {

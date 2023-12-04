@@ -8,7 +8,7 @@
 // * 2400 is a leap year.
 // */
 // // Primitive types and operators
-public class JavaQuest2 {
+public class OKJavaQuest2 {
   public static void main(String[] args) {
     int a = 10;
     int b = 3 * a % 3;
