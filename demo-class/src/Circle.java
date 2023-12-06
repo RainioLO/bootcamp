@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+
 public class Circle {
 
   private double radius;
@@ -31,14 +33,19 @@ public class Circle {
   }
 
   public double getArea() {
-
-
     return Math.pow(this.radius, 2) * Math.PI;
 
     // double area = (this.radius)*(this.radius)*3.14;
     // return area;
     // Math Library
+  }
 
+
+
+  // Static Method
+  public static double area(double radius) {
+    return BigDecimal.valueOf(radius).multiply(BigDecimal.valueOf(radius))
+        .multiply(BigDecimal.valueOf(Math.PI)).doubleValue(); // fix by BigDecimal
   }
 
 
