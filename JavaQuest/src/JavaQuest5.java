@@ -11,9 +11,12 @@ public class JavaQuest5 {
     String str = "Welcome to the coding bootcamp."; // You should not change this line
     char target = 'c'; // Update this target to test the logic
 
-
+    int [] count = new int []
     for (int i = 0; i < str.length(); i++) {
       if (target == str.charAt(i)) {
+        
+
+
 
       }
 

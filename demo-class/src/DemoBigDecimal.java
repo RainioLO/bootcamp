@@ -23,7 +23,7 @@ public class DemoBigDecimal { // BifDecimal for calculation
     BigDecimal bd5 = BigDecimal.valueOf(0.1);
     BigDecimal bd6 = bd4.add(bd5);
     System.out.println("bd6= " + bd6.doubleValue());
-
+    System.out.println("bd4= " + bd4.doubleValue());
 
     // Problem Statement: Substration (0.3-0.1)
     double s2 = 0.3 - 0.1;

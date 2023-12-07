@@ -39,20 +39,13 @@ public class OKDemoIntArray2 {
       if (arr[i] > max) {
         secondMax = max; // second max will be kicked out
         max = arr[i];
-      } else if (arr [i]>secondMax) {
-        secondMax = arr [i];
-
+      } else if (arr[i] > secondMax) {
+        secondMax = arr[i];
       }
     }
     System.out.println("second max: " + secondMax);
 
 
-
-
-
-
-
-    
 
   }
 }

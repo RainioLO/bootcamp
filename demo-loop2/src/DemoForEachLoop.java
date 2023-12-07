@@ -57,7 +57,7 @@ public class DemoForEachLoop {
     System.out.println("Reversed String= " + reverse("")); // "fedcba"
     System.out.println("Reversed String= " + reverse("abcde")); // "edcba"
 
-
+    
   }
 
 

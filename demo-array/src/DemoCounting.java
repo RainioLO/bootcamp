@@ -19,7 +19,7 @@ public class DemoCounting {
 
     int[] counts = new int[max - min + 1]; // find range from min and max, then 開array
     for (int i = 0; i < numbers.length; i++) {
-      counts[numbers[i] - min]++;
+      counts[numbers[i]-min]++;
     }
     int maxCount = 0;
     for (int i = 0; i < counts.length; i++) {
