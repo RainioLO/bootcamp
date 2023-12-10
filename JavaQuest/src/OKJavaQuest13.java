@@ -1,5 +1,6 @@
+import java.math.BigDecimal;
 
-public class JavaQuest13 {
+public class OKJavaQuest13 {
   // You are given a non-negative floating point number rounded to two decimal places celsius, that denotes the temperature in Celsius.
   // You should convert Celsius into Kelvin and Fahrenheit by methods
 
@@ -23,10 +24,27 @@ public class JavaQuest13 {
   }
 
   // Kelvin (蘭氏) = Celsius (攝氏) + 273.15
-  // Code a method here to return temperature in Fahrenheit, by inputting temperature in Celsius
+  // Code a method here to return temperature in Kelvin, by inputting temperature in Celsius
+
+  public static double convertKelvin(double celcius) {
+
+    double kelvin = 0;
+    kelvin = BigDecimal.valueOf(celcius).add(BigDecimal.valueOf(273.15))
+        .doubleValue();
+
+    return kelvin;
+  }
 
   // Fahrenheit (華氏) = Celsius (攝氏) * 1.80 + 32.00
   // Code a method here to return temperature in Fahrenheit, by inputting temperature in Celsius
 
+  public static double convertFahrenheit(double celcius) {
+
+    double fahrenheit = 0;
+    fahrenheit = BigDecimal.valueOf(celcius).multiply(BigDecimal.valueOf(1.80))
+        .add(BigDecimal.valueOf(32.00)).doubleValue();
+
+    return fahrenheit;
+  }
 
 }

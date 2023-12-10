@@ -1,5 +1,5 @@
 
-public class JavaQuest14 {
+public class OKJavaQuest14 {
   // Given an integer x, return true if x is a palindrome (迴文), and false
   // otherwise.
   // Palindrome: it is same text, no matter you read it from left to right, or
@@ -39,6 +39,16 @@ public class JavaQuest14 {
   // false
   public static boolean palindrome(int num) {
     // code here ...
-    return false;
+
+    char[] arr = String.valueOf(num).toCharArray();
+    boolean isPalindrome = true;
+
+    for (int i = 0; i < arr.length / 2; i++) {
+
+      if (arr[i] != arr[arr.length - 1 - i]) {
+        isPalindrome = false;
+      }
+    }
+    return isPalindrome;
   }
 }

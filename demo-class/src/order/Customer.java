@@ -49,6 +49,9 @@ public class Customer {
     this.age = age;
   }
 
+  public void setOrders(Order[] orders) {
+    this.orders = orders;
+  }
 
   // Getter
   public Order[] getOrders() {
@@ -121,6 +124,7 @@ public class Customer {
     return "Customer(Orders=" + Arrays.toString(this.orders) + ")";
   }
 
+
   public static void main(String[] args) {
 
 
@@ -164,6 +168,7 @@ public class Customer {
 
     System.out.println(customer.membership());
 
+    System.out.println(customer.getOrder(1).getItem("ABC").toString());
 
   }
 }

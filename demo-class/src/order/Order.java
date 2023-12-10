@@ -3,6 +3,7 @@ package order;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Arrays;
+import building.Member;
 
 public class Order {
 
@@ -22,12 +23,21 @@ public class Order {
 
   // }
 
-  public Order (LocalDate buydate) {
-    this.id = ++ orderNo;
+  public Order(LocalDate buydate) {
+    this.id = ++orderNo;
     this.buydate = buydate;
-    this.items = new Item [0];
+    this.items = new Item[0];
   }
 
+
+  public Order(int id, LocalDate buydate, Item[] items) {
+
+    this.id = ++orderNo;
+    this.buydate = buydate;
+    this.items = items;
+
+
+  }
 
 
   // Class Order setters
@@ -79,12 +89,27 @@ public class Order {
 
   }
 
+  public Item getItem(String desc) {
+    for (int i = 0; i < this.items.length; i++) {
+      if (desc == this.items[i].getDesc()) {
+        return this.items[i];
+      }
+    }
+    return null;
+  }
 
   @Override
   public String toString() {
-    return ("order(id= " + this.id + ", buyDate= " + this.buydate
-        + " / totalAmount $ " + totalAmount());
+    return "Item:" + Arrays.toString(this.items) + ")";
   }
+
+
+
+  // @Override
+  // public String toString() {
+  // return ("order(id= " + this.id + ", buyDate= " + this.buydate
+  // + " / totalAmount $ " + totalAmount());
+  // }
 
   public static void main(String[] args) {
 

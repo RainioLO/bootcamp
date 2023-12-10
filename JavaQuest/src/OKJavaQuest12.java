@@ -7,7 +7,7 @@ import java.util.Arrays;
  *
  * Case 3: [3, 3] Target: 7 Ans: [-1, -1]
  */
-public class JavaQuest12 {
+public class OKJavaQuest12 {
   // Given an array of integers nums and an integer target, return the index of
   // the two numbers such that they add up to target.
 
