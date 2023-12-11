@@ -82,7 +82,8 @@ public class DemoStringBuilder {
     StringBuilder s2 = new StringBuilder("abc");
 
     System.out.println(s1.toString().equals(s2.toString())); // talking about the string value
-    System.out.println(s1.equals(s2)); // talking about the object reference
+    System.out.println("HEYHEY " +s1.equals(s2)); // talking about the object reference
+    System.out.println("HEYHEY11 " + (s1 == s2));
 
 
     StringBuilder sb33 = new StringBuilder("");

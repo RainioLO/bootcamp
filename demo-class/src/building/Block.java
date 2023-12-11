@@ -73,6 +73,13 @@ public class Block {
 
   public static void main(String[] args) {
 
+    Block block1 = new Block();
+    Block block2 = new Block();
+    Block block3 = new Block();
+
+    System.out.println(Block.getCounter());
+
+
   }
 
 }

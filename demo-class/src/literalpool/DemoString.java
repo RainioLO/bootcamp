@@ -39,7 +39,7 @@ public class DemoString {
     String str13 = new String("aaabbb").intern(); // str13 point to the literal pool
     String str14 = new String ("aaabbb");
     // System.out.println("trial: " + (str13 == str14)); // true
-     System.out.println("trial: " + (str11 == str13)); // false
+     System.out.println("trial: " + (str11 == str13)); 
     // System.out.println(str11 == str14); // true
 
 
