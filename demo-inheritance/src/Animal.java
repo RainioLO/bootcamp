@@ -1,4 +1,4 @@
-public class Animal { // abstract
+public abstract class Animal { // if abstract --> cannot new Animal ()....
 
     private int age; // they are common attributes in other class too.
 

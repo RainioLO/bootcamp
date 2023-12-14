@@ -1,5 +1,5 @@
 
-public class Dog {
+public class Dog{
   
 
   private int age;

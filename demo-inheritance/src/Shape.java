@@ -1,7 +1,10 @@
 import java.math.BigDecimal;
 
 public abstract class Shape { // to be extended by other class
-  // abstract vs class
+  // abstract vs class // abstract means this Class can have abstract method
+  // abstract can not be "new"
+  // the son can call this abstract by super()
+  // super () is to inherit the variable from shape
 
   // Difference
   // 1. Cannot be "new"
@@ -18,7 +21,7 @@ public abstract class Shape { // to be extended by other class
 
   private double length;
 
-  abstract double area(); // implicitly public
+  abstract double area(); // implicitly public // the sons inherit this to do somwthing
 
   public Shape() {
 
@@ -45,10 +48,10 @@ public abstract class Shape { // to be extended by other class
     this.length = length;
   }
 
-  public static double totalArea(Shape[] shapes) {
+  public static double totalArea(Shape[] shapes) { // ensure the object in shapes inherit the Shape
     BigDecimal total = BigDecimal.valueOf(0);
     for (Shape shape : shapes) {
-      total = total.add(BigDecimal.valueOf(shape.area()));
+      total = total.add(BigDecimal.valueOf(shape.area())); // shape.area() determins which object (Circle/Square) -> different implementation -> on area
     }
     return total.doubleValue();
   }
@@ -64,12 +67,17 @@ public abstract class Shape { // to be extended by other class
     // Use shape to receive the circle, only have shape variable
 
     Circle c2 = (Circle) s1;
-    System.out.println(c2.getRadius());
+    System.out.println(c2.getRadius()); // getRadius() is the skill only by Class Circle
 
     Circle c1 = new Circle();
     System.out.println("c1 area= " + c1.area());
     System.out.println("c1 color= " + c1.getColor());
     System.out.println("c1 radius= " + c1.getRadius()); // Use Circle to receive the object --> can see radius
+
+
+    Shape[] shapes = new Shape[] {new Circle(4.2), new Square(9)}; // can put all sons in this class array
+    System.out.println(totalArea(shapes));
+
 
   }
 
