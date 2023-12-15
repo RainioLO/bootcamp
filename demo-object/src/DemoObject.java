@@ -4,6 +4,7 @@ public class DemoObject { // extends Object implicitly
 
   }
 
+
   public static void main(String[] args) {
 
     Object o1 = new Object();
@@ -61,9 +62,17 @@ public class DemoObject { // extends Object implicitly
     // Cat equals()
 
 
+    Cat c1 = new Cat("ABC", 5);
+    Cat c2 = new Cat("ABC", 10);
+    Cat c3 = new Cat("DEF", 5);
+    Cat c4 = new Cat("IJK", 7);
+    Cat c5 = new Cat("ABC", 5);
+    
 
-
-
+    System.out.println(c1.equals(c2));// false different age
+    System.out.println(c1.equals(c3));// false, different name
+    System.out.println(c1.equals(c4));// false, different name and different age
+    System.out.println(c1.equals(c5));// true
 
 
   }

@@ -99,7 +99,7 @@ public class Order {
   }
 
   @Override
-  public String toString() {
+  public String toString() { // need to override the toString method to give the array string instead of the address
     return "Item:" + Arrays.toString(this.items) + ")";
   }
 

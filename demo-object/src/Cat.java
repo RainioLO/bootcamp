@@ -1,12 +1,20 @@
+import java.util.Objects;
+
 public class Cat {
 
   private String name;
 
   private int age;
 
+  private final Eye[] eyes = new Eye[2]; // if static , 公家 can 拎
+
   public Cat(String name, int age) {
     this.name = name;
     this.age = age;
+  }
+
+  public Eye[] getEyes() {
+    return this.eyes;
   }
 
   public int getAge() {
@@ -25,17 +33,26 @@ public class Cat {
     this.name = name;
   }
 
+  /////////////////////// equals and hashcode must be equal////////////////////////////
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(Object obj) { // overriding Object Class 's equals method
     if (this == obj) // same objecrt same value
       return true;
     if (!(obj instanceof Cat)) // object not Class Cat
       return false;
     Cat cat = (Cat) obj; // can use Class Cat, cat object to .method
-    return cat.getAge() == this.age && cat.getName().equals(this.name);
-
+    return Objects.equals(cat.getAge(), this.age)
+        && Objects.equals(cat.getName(), this.name);
+    // && Objects.equals(cat.getEyes(), this.eyes);
   }
 
+
+  @Override
+  public int hashCode() { // hashcode -> represent object address
+    return Objects.hash(this.name, this.age); // write all fields in this code
+  }
+
+  ///////////////////////////////////////////////////////////////////////////////////
 
   public static void main(String[] args) {
 

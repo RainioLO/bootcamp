@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 public class SuperDecimal extends BigDecimal {
 
 
-  public SuperDecimal () {
-    super(BigDecimal)
+  public SuperDecimal() {
+    super(BigDecimal);
   }
 
   public SuperDecimal(double value) {
@@ -36,6 +36,8 @@ public class SuperDecimal extends BigDecimal {
     SuperDecimal sd4 = sd2.multiply(sd3); // no need to write new method
     // sd2, sd3 inherit all BigDecimal public instance methods
     sd4.doubleValue();
+
+    // SuperDecimal inherit BigDecimal 's methods and variables
 
 
 

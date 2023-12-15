@@ -17,6 +17,7 @@ public class Account implements Transferable { // solid instance // everyone nee
   @Override
   public boolean transfer(Transferable to, int amount) { // Transferable is an interface
 
+    // use boolean do something without returning other solution
     if (amount <= 0)
       return false; // throw
     if (this.balance() < amount)
