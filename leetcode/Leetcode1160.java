@@ -9,22 +9,8 @@ public class Leetcode1160 {
       for (int j = 0; j < words[i].length(); j++) {
 
 
-        for (int k = 0; k < chars.length(); k++) {
-
-          if (words[i].charAt(j) == chars.charAt(k)) {
-            count += 1;
-          }else{
-            count = 0;
-            break;
-          }
-           sum += count;
-           count =0;
-        }
-      }
-    }
-
-    return sum;
   }
+}
 
   public static void main(String[] args) {
 
@@ -40,4 +26,5 @@ public class Leetcode1160 {
 
 
 
+}
 }

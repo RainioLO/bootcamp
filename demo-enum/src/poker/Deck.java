@@ -31,10 +31,8 @@ public class Deck {
     Deck deck = Deck.ofPocker();
     System.out.println(Arrays.toString(deck.cards));
 
-    Deck shuffledDeck = deck; // Create a copy of the original deck
-
     for (int i = 0; i < 100; i++) {
-        shuffledDeck.oeverhand();
+      deck.oeverhand();
     }
     System.out.println(Arrays.toString(deck.cards));
 
