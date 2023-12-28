@@ -1,12 +1,11 @@
 public class Leetcode1160 {
   public static int countCharacters(String[] words, String chars) {
 
-    int sum = 0;
     int count = 0;
 
     for (int i = 0; i < words.length; i++) {
-
       for (int j = 0; j < words[i].length(); j++) {
+        if (words[i].charAt(j))
 
 
   }

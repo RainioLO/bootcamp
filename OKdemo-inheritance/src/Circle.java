@@ -26,6 +26,7 @@ public class Circle extends Shape {
   public Circle(double radius, String color) {
     // super() calling shape ()
     super(color); // call parent's color, color is private in shape
+    //this.color = color;
     this.radius = radius;
   }
 
