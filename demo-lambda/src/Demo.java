@@ -44,7 +44,5 @@ public class Demo {
     };
     System.out.println(multiply.compute(1000, 3)); // 3000
 
-
-
   }
 }
