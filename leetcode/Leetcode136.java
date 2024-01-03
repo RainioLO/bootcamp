@@ -1,16 +1,19 @@
+import java.util.HashSet;
+
 public class Leetcode136 {
 
   public int singleNumber(int[] nums) {
 
-    int count = 0;
-    int[] counter = new int[nums.length];
-    for (int i = 0; i < nums.length; i++) {
-      counter[nums[i]]++;
-    }
-    for (int i = 0; i < counter.length; i++) {
-      if (counter[i] == 1)
-        count = i;
-    }
-    return count;
+      HashSet<Integer> uniqueNumbers = new HashSet<>();
+      HashSet<Integer> duplicateNUmbers = new HashSet<>();
+
+      for(int number : nums){
+          if (!uniqueNumbers.add(number)){
+              duplicateNUmbers.add(number);
+          }
+      }
+      uniqueNumbers.removeAll(duplicateNUmbers);
+      return uniqueNumbers[0];
+
   }
 }
