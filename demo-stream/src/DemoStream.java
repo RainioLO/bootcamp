@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class DemoStream {
 
@@ -135,7 +136,7 @@ public class DemoStream {
                 new ArrayList<>(List.of((new ArrayList<>(List.of(1, 3, 5))),
                         new ArrayList<>(List.of(2, 4, 6))));
 
-        List<Integer> integers = intergerList.stream().flatMap(e -> e.stream())
+        List<Integer> integers = intergerList.stream().flatMap(e -> e.stream()) // merage the list of the list and sort them //
                 .sorted((i1, i2) -> i2.compareTo(i1))
                 .collect(Collectors.toList());
         System.out.println(integers);
@@ -161,9 +162,41 @@ public class DemoStream {
                 catList.stream().anyMatch(e -> "Karis".equals(e.getName()));
 
         Map<Boolean, List<Cat>> catMap = catList.stream()
-                .collect(Collectors.partitioningBy(cat -> cat.getAge() >= 10));
+                .collect(Collectors.partitioningBy(cat -> cat.getAge() >= 10)); // classify the cat's attribute
 
-        System.out.println(catMap);
+        System.out.println(catMap); // return false and true in a map
+
+        // for-each
+        int x = 100;
+        for (Cat cat : cats) {
+            System.out.println(x);
+            x = 10;
+        }
+
+        cats.stream().forEach(e -> { // stream only focus on the certain list for this is List<Cat>, cannot handle other parameters
+            System.out.println(e.getAge());
+            // System.out.println(x); // error, no read operation on the variable outside the stream.
+            // x = 10; // error, No write operation on the variable outside the stream.
+        });
+
+        System.out.println(cats.stream().mapToInt(e -> e.getAge()).sum()); // after stream should all be lambda befrore terminal operation
+
+        System.out.println(cats);
+
+        Stream<Cat> sc = Stream.of(new Cat("ABC", 9), new Cat("IJK", 10));
+        List<Cat> result11 =
+                sc.filter(e -> e.getAge() >= 10).collect(Collectors.toList());
+
+        Cat cat = null;
+        Stream<Cat> sc2 = Stream.ofNullable(null); // new ArrayList<>().stream() // List can.stream
+        sc2.forEach(e -> { // the method from the method from interface. with a pointor of the interface type, to use the method
+            System.out.println("hello");
+        }); // empty no "hello"
+
+
+        //Stream.of(cat); // runtime error as cannot have a null list for stream.
+
+        Stream<Cat> sc3 = Stream.empty(); // static method to create the empty stream()
 
 
 
