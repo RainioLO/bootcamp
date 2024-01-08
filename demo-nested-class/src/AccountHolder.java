@@ -30,9 +30,12 @@ public class AccountHolder { // outer class
     }
 
     public void printHolderName() {
-      System.out.println(name);
+      System.out.println(name); // public static cannot access outer class
     }
 
+    public Account(){
+
+    }
 
 
   }
@@ -44,6 +47,10 @@ public class AccountHolder { // outer class
     // Account joinAccount = john.new Account("1234");
     Account joinAccount = john.createAccount("1234");
     joinAccount.printHolderName();
+
+    //Account abc = new Account("12344");
+
+  AccountHolder.Account abds = new Account(); // cannot create new object by normal class through outer class
 
   }
 

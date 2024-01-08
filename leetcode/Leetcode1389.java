@@ -4,15 +4,13 @@ public class Leetcode1389 {
 
 
     int[] arr = new int[nums.length];
-    for (int i = 0; i < arr.length; i++) {
-      arr[i] = -1;
-    }
+    int idx = 0;
 
 
     for (int i = 0; i < arr.length; i++) {
-      if (arr[i] == -1) {
-        arr[index[i]] = nums[i];
-      }
+
+        arr[index[idx++]] = nums[i];
+
     }
 
   }

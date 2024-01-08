@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.OptionalDouble;
 
 public class DemoOptional {
     public static void main(String[] args) {
@@ -26,7 +27,7 @@ public class DemoOptional {
 
 
         // Approach 2 to handle Optional return value
-        Optional<Account> oa = DemoOptional.setUp2(3, 0.0d);
+        Optional<Account> oa = DemoOptional.setUp2(-1, 0.0d);
         if (oa.isPresent()) { // test if present first
             oa.get().credit(0); // cannot get if nothing inside
         } else { // oa is null -> do nothing
@@ -35,7 +36,7 @@ public class DemoOptional {
         }
 
         List<Account> accounts = new ArrayList<>(
-                List.of((new Account(1, 120.0d)), (new Account(2, 50.0d))));
+                List.of((new Account(1, 0.0d)), (new Account(-1, 50.0d))));
 
         Optional<Account> optaccount = accounts.stream() // is one Account object
                 .filter(e -> e.getBalance() > 30.0d).findFirst();
@@ -46,7 +47,7 @@ public class DemoOptional {
 
         optaccount.ifPresent(e -> {
             // Perform an action on the account object
-            System.out.println("Account balance: " + e.getBalance());
+            System.out.println("111 Account balance: " + e.getBalance());
         });
 
         Account acct = optaccount2.orElse(new Account(99, 0.1d)); // if cannot find -> creat a new Account
@@ -56,6 +57,17 @@ public class DemoOptional {
         Account acct3 =
                 optaccount2.orElseThrow(() -> new NoSuchElementException());
 
+        OptionalDouble maxBalance =
+                accounts.stream().mapToDouble(e -> e.getBalance()).max();
+
+
+        double max = 0.0d;
+        if (maxBalance.isPresent()) {
+            max = maxBalance.getAsDouble(); // if the max balance is present --> get the double value
+        }
+        max = maxBalance.orElse(-1.0d); // if no not present -> give -1.0d
+
+        System.out.println(max); // 120.0d as it can be no
 
 
     }

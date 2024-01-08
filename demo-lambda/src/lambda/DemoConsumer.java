@@ -40,7 +40,7 @@ public class DemoConsumer {
       System.out.println(new StringBuilder(s2).append(s1.charAt(i1)));
     };
 
-    superConsumer.accept("hello", 4, "prefix");
+    superConsumer.accept("hello", 4, "prefix"); // prefixo
 
 
   }
