@@ -8,9 +8,10 @@ public class Cow extends Animal {
   // Polymorphism + Overloading (Not Overriding)
   public static void main(String[] args) {
     Animal cow = new Cow(); // cow is declared by Animal
+    // Cow cow2 = (Cow)cow;
     // Compile time : cow obj is declared by Animal,
     // so it can call eat(ect can access which methods
-    System.out.println(cow.eat()); // the object has 2 methods: eat(), eat (Stirng food), 
+    System.out.println(cow.eat("ee")); // the object has 2 methods: eat(), eat (Stirng food), 
     // "cow" object reference) only but not eat(String food)
 
     // Run time: Find the object pointing to.

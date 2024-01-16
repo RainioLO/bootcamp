@@ -18,11 +18,17 @@ public class Exercise14 {
     public static void main(String[] args) {
         // 1. Static method
         // Call the static method
+        myMethod();
 
         // 2. Instance Method
         // myPublicMethod(); This would compile an error, why?
 
         // Create an object of Exercise14
         // Call the public method on the object
+
+        Exercise14 exercise14 = new Exercise14();
+        exercise14.anotherMethod();
+
+
     }
 }

@@ -4,7 +4,9 @@ public class Animal {
     return "[Animal] i am eating ...";
   }
 
-
+  public String eat(String food) {
+    return "[Animal] i am eating " + food + " ...";
+  }
 
   
 

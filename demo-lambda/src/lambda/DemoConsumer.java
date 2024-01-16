@@ -31,14 +31,14 @@ public class DemoConsumer {
 
     BiConsumer<Book, Person> consumer = (book, person) -> {
       System.out.println(book.getPrice() + " ,age: " + person.getAge());
-    };
+    }; //statement
 
     consumer.accept(new Book(), new Person(18));
 
     // SuperConsumer
     SuperConsumer<String, Integer, String> superConsumer = (s1, i1, s2) -> {
       System.out.println(new StringBuilder(s2).append(s1.charAt(i1)));
-    };
+    }; // method statement
 
     superConsumer.accept("hello", 4, "prefix"); // prefixo
 
