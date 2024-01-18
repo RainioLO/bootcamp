@@ -56,7 +56,7 @@ class Exercise35 {
                 System.out.println("The Square of each elements: ");
 
                 // Code here ...
-                squareSet = anotherNumbers.stream().distinct().map(e -> e * e)
+                squareSet = anotherNumbers.stream().map(e -> e * e).forEach(e-> {System.out.println("The Square of each elements: " + e)})
                                 .collect(Collectors.toList());
 
                 // Implement stream reduce() method to sum up all even numbers from ArrayList anotherNumbers
