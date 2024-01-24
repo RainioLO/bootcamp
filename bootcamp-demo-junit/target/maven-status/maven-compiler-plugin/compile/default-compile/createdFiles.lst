@@ -1,0 +1,16 @@
+com\lomboks\Dog.class
+com\lomboks\Person$PersonBuilder.class
+com\lomboks\Cat.class
+com\lomboks\App.class
+com\lomboks\Book.class
+com\lomboks\Developer$DeveloperBuilderImpl.class
+com\uitest\Calculator.class
+com\lomboks\Developer$DeveloperBuilder.class
+com\lomboks\Order.class
+com\lomboks\Staff$StaffBuilderImpl.class
+com\lomboks\Staff.class
+com\uitest\DemoStaticImport.class
+com\lomboks\Developer.class
+com\lomboks\Book$BookBuilder.class
+com\lomboks\Person.class
+com\lomboks\Staff$StaffBuilder.class
