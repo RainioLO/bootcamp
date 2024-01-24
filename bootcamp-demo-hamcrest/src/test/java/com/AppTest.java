@@ -6,6 +6,7 @@ import java.util.List;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.MatcherAssert.*;
 import org.junit.jupiter.api.Test;
+import static model.UppercaseStringMatcher.*;
 
 public class AppTest {
 
@@ -80,10 +81,104 @@ public class AppTest {
         List<String> strings =
                 new ArrayList<>(List.of("John", "Peter", "Jenny"));
         assertThat(strings, hasItems("Peter"));
+        assertThat(strings, hasItems("Peter", "Jenny"));
         assertThat(strings, not(hasItems("Peters")));
         assertThat(strings, hasSize(3));
+        assertThat(strings, contains("John", "Peter", "Jenny")); // contains in order, and all items
+        assertThat(strings, containsInAnyOrder("Jenny", "Peter", "John"));
+        assertThat(strings, not(containsInAnyOrder("Peter", "John")));
+
+        // what is the difference between contains() and hasIteams()
+        // 1. contains() -> & containsInAnyOrder() -> with all items
+        // 2. hasItems() -> with specific items only, no ordering
 
         assertThat(strings.size(), allOf(lessThan(5), greaterThan(0)));
     }
 
+    @Test
+    void testArray() {
+        String[] strings = new String[3];
+        strings[0] = "John";
+        strings[1] = "Ken";
+        strings[2] = "Steven";
+
+        assertThat(strings, arrayContaining("John", "Ken", "Steven"));
+        assertThat(strings, not(arrayContaining("Ken", "Steven")));
+        assertThat(strings, not(arrayContaining("Ken", "Steven", "John")));
+
+        assertThat(strings, arrayContainingInAnyOrder("Ken", "Steven", "John"));
+        assertThat(strings, not(arrayContainingInAnyOrder("Ken", "Steven")));
+    }
+
+    @Test
+    void testTolerance() {
+        double tolerance = 0.01d;
+        double actual = 3.1415d;
+        assertThat(actual, closeTo(3.141450, tolerance));
+        assertThat(actual, not(closeTo(3.131450, tolerance)));
+        assertThat(actual, closeTo(3.151, tolerance));
+    }
+
+
+
+    @Test
+    void testObject() {
+        // let the pointer to the heap momory
+        Object obj = "hello"; // this Object no String method, ploymorphism
+        System.out.println(obj); // toString -> is the Object toString, an address... cannot use String class toString(F)
+
+        // Assert instnceOf()
+        assertThat(obj, instanceOf(String.class)); // true
+        assertThat(obj, not(instanceOf(Integer.class)));
+        if (obj instanceof String) { // need to know it is the String -> so that can use the method
+            String s = (String) obj; // risky if upcast, because it may be other class, therefore need to ckeck before.
+        }
+
+        // obj = 1000; // Integer.class
+        // if (obj instanceof Integer) {
+        // Integer i = (Integer) obj; // prepare the Integer house -> so that safe
+        // }
+    }
+
+    @Test
+    void testAnimal() {
+        Animal animal1 = Animal.get(3);
+        assertThat(animal1, instanceOf(Dog.class));
+
+        Animal animal2 = Animal.get(10);
+        assertThat(animal2, instanceOf(Cat.class));
+    }
+
+    @Test
+    void testCompatible() {
+
+        assertThat(Dog.class, typeCompatibleWith(Animal.class));
+        assertThat(Dog.class, typeCompatibleWith(Object.class));
+        assertThat(Dog.class, not(typeCompatibleWith(Integer.class)));
+        assertThat(Animal.class, not(typeCompatibleWith(Dog.class)));
+        assertThat(Dog.class, not(typeCompatibleWith(Cat.class)));
+    }
+
+    @Test
+    void testCustomMatcher() {
+        String result = "HELLO";
+        assertThat(result, containsUpperCaseOnly());
+        assertThat("hello", not(containsUpperCaseOnly()));
+        assertThat("HEllO", not(containsUpperCaseOnly()));
+    }
+
+    @Test
+    void testRegularExpression() {
+        assertTrue("092358".matches("[0-9]+"));
+        assertTrue("092358".matches("[0-9]*"));
+
+        String emailRegx =
+                "^[A-Za-z0-9._-] + [A-Za-z0-9]\\@[A-Za-z0-9-]+\\.[A-Z|a-z]{2,}$";
+
+        assertTrue("abc@gmail.com".matches(emailRegx));
+        assertTrue("a.-_bc@gmail.com".matches(emailRegx));
+
+
+
+    }
 }
