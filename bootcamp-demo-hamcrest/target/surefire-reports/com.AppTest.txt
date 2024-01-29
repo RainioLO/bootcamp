@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: com.AppTest
+-------------------------------------------------------------------------------
+Tests run: 14, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.111 s <<< FAILURE! - in com.AppTest
+testRegularExpression  Time elapsed: 0.018 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.AppTest.testRegularExpression(AppTest.java:178)
+
+testNullValue  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: null
+     but: was "hello"
+	at com.AppTest.testNullValue(AppTest.java:46)
+
+testSameObject  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: 
+
+Expected: sameInstance("hello")
+     but: was "hello"
+	at com.AppTest.testSameObject(AppTest.java:56)
+
